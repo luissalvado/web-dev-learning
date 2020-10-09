@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   
   query: string;
   artists: object;
+  currentArtist: object;
 
   constructor( private http: HttpClient){
     this.query = '';
@@ -29,8 +30,9 @@ export class AppComponent implements OnInit{
   }
 
   showArtist(item: { name: string; highlight: boolean; }){
-    this.query = item.name
-    item.highlight = !item.highlight 
+    this.query = item.name;
+    item.highlight = !item.highlight;
+    this.currentArtist = item
   }
 
 }
