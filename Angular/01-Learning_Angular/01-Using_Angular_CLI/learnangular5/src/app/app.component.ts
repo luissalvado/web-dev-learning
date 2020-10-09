@@ -19,11 +19,6 @@ export class AppComponent implements OnInit{
   query: string;
   artists: object;
 
-  showArtist(item: { name: string; highlight: boolean; }){
-    this.query = item.name
-    item.highlight = !item.highlight 
-  }
-
   constructor( private http: HttpClient){
     this.query = '';
   }
@@ -31,6 +26,11 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.http.get<Object>('../assets/data.json').subscribe( 
       data => { this.artists = data; } )
+  }
+
+  showArtist(item: { name: string; highlight: boolean; }){
+    this.query = item.name
+    item.highlight = !item.highlight 
   }
 
 }
