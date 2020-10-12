@@ -22,6 +22,13 @@ import {ProductServices} from './Products/services/product.service';
 
 const appRoutes: Routes = [
   {path: '', component: InstructionsComponent},
+  {path: 'login', component: LoginComponent, children: [
+    {path: '', component: LoginUserComponent},
+    {path: 'login', component: LoginUserComponent},
+    {path: 'forgot', component: ResetPasswordComponent}]},
+  {path: 'products', component: ProductsComponent, children: [
+    {path: 'details/:id', component: DetailsComponent}]},
+  {path: 'admin', component: AdminComponent},
   
 ];
 @NgModule({
