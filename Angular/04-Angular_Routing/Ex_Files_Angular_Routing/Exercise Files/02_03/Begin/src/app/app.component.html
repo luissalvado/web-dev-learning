@@ -4,7 +4,8 @@
   <div class="column" style="border-right: dotted; border-width: thin">
     <ul>
       <li *ngFor="let product of products" class="pad">
-        <div> {{product.name}}</div>
+        <button (click)="show(product.id)"> 
+          {{product.name}}</button>
       </li>
     </ul>
   </div>

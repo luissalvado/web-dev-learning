@@ -10,6 +10,7 @@ import { InstructionsComponent } from './instructions/instructions.component';
 
 const appRoutes: Routes = [
   {path: '', component: InstructionsComponent},
+  {path: 'details/:id/:name', component: DetailsComponent}
   ];
 
 @NgModule({

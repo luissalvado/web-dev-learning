@@ -12,10 +12,14 @@ export class AppComponent implements OnInit {
 
  products: any;
 
-  constructor(private productServices: ProductServices) { }
+  constructor(private router:Router , private productServices: ProductServices) { }
 
   ngOnInit() {
     this.products = this.productServices.productList();
+  }
+
+  show(id){
+    this.router.navigate(['details', id, 'fred'])
   }
 
 
