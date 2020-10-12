@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import {ProductsComponent} from './Products/products.component';
 import {DetailsComponent} from './Products/details/details.component';
 import {ProductServices} from './services/product.service';
+import { LoggedInGuard } from './services/logged-in.guard';
+import { PerSavedGuardGuard } from './services/per-saved-guard.guard';
 
 const appRoutes: Routes = [
   {path: '', component: InstructionsComponent},
@@ -32,12 +34,12 @@ const appRoutes: Routes = [
       {path: '', component: InstructionsComponent},
       {path: 'details/:id', component: DetailsComponent}
     ]},
-  {path: 'admin', component: AdminComponent,
+  {path: 'admin', component: AdminComponent, canActivate: [LoggedInGuard],
     children: [
       {path: '', component: UsersComponent},
       {path: 'user-list', component: UsersComponent},
       {path: 'add', component: AddUserComponent},
-      {path: 'permissions', component: PermissionsComponent, },
+      {path: 'permissions', component: PermissionsComponent, canDeactivate: []},
     ]}
 ];
 @NgModule({
@@ -64,7 +66,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductServices],
+  providers: [ProductServices, LoggedInGuard, PerSavedGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
