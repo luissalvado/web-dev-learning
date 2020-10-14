@@ -2,17 +2,17 @@
   "products": [
     {
       "id": 1,
-      "name": "Pen BIC Black",
-      "price": 1.2
+      "name": "Ducky Keyboard",
+      "price": 199.99
     },
     {
       "id": 2,
-      "name": "NoteBook Mac Pro",
-      "price": 1200
+      "name": "MacBook Pro",
+      "price": 1250.00
     },
     {
       "id": 3,
-      "name": "Samsung S20",
+      "name": "IPhone SE",
       "price": 249.99
     }
   ]
