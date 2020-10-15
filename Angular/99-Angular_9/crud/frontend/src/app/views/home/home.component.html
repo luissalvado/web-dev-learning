@@ -1,8 +1,9 @@
 <mat-card class="home mat-elevation-z3">
-    <mat-card-title class="title"> 
-        Welcome!
-    </mat-card-title>
-    <mat-card-subtitle class="subtitle">
-        Dummy login system in Angular!
-    </mat-card-subtitle>    
+  <mat-card-title class="title"> Welcome! </mat-card-title>
+  <mat-card-subtitle class="subtitle">
+    Dummy login system in Angular!
+  </mat-card-subtitle>
+  <ul>
+    <li *mySpecialFor="let n; into: [1, 2, 3]">{{ n }}</li>
+  </ul>
 </mat-card>
