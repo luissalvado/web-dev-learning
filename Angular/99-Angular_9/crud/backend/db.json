@@ -14,6 +14,11 @@
       "id": 3,
       "name": "IPhone SE",
       "price": 249.99
+    },
+    {
+      "name": "Logitech Mouse",
+      "price": "123.99",
+      "id": 4
     }
   ]
 }
