@@ -8,12 +8,22 @@
     {
       "id": 2,
       "name": "MacBook Pro",
-      "price": 1250.00
+      "price": 1250
     },
     {
       "id": 3,
       "name": "IPhone SE",
       "price": 249.99
+    },
+    {
+      "name": "Logitech Mouse",
+      "price": "123.99",
+      "id": 4
+    },
+    {
+      "name": "Monitor Asus 24",
+      "price": "299.99",
+      "id": 5
     }
   ]
 }
