@@ -24,7 +24,8 @@ export class ProductService {
   }
   // return a observable of Product.
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product).pipe( // pipe vai retornar um observeble
+    return this.http.post<Product>(this.baseUrl, product).pipe(
+      // pipe vai retornar um observeble
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -63,7 +64,7 @@ export class ProductService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Error occured!', true)
+    this.showMessage("Error occured!", true);
     return EMPTY;
   }
 }
