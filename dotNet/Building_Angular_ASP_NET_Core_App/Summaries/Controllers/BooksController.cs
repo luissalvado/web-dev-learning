@@ -29,5 +29,14 @@ namespace Summaries.Controllers
         {
             return Ok(_service.GetAllBooks());
         }
+
+        // EndPoint to Update a existing book
+        [HttpPut("UpdateBook/{id}")]
+        public IActionResult UpdateBook(int id, [FromBody]Book book)
+        {
+            _service.UpdateBook(id, book);
+            return Ok(book);
+        }
+
     }
 }
