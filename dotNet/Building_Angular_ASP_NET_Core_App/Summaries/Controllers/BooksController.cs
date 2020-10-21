@@ -15,7 +15,7 @@ namespace Summaries.Controllers
             _service = service;
         }
 
-        //Create a API endpoint to create and add a new book
+        //API endpoint to create and add a new book
         [HttpPost("AddBook")]
         public IActionResult AddBook([FromBody] Book book)
         {
