@@ -11,6 +11,6 @@ namespace Summaries.Data.Models
         //These props are optional.
         public double? Rate { get; set; }
         public DateTime? DateStart { get; set; }
-        public DateTime? DateEnd { get; set; }
+        public DateTime? DateRead { get; set; }
     }
 }
