@@ -6,7 +6,7 @@ namespace Summaries.Controllers
 {
     // define a route for the controller
     [Route("api/[controller]")]
-    public class BooksController: Controller
+    public class BooksController : Controller
     {
         private IBookService _service;
 
@@ -17,7 +17,7 @@ namespace Summaries.Controllers
 
         //Create a API endpoint to create and add a new book
         [HttpPost("AddBook")]
-        public IActionResult AddBook ([FromBody]Book book)
+        public IActionResult AddBook([FromBody] Book book)
         {
             _service.AddBook(book);
             return Ok("Added");
@@ -32,11 +32,25 @@ namespace Summaries.Controllers
 
         // EndPoint to Update a existing book
         [HttpPut("UpdateBook/{id}")]
-        public IActionResult UpdateBook(int id, [FromBody]Book book)
+        public IActionResult UpdateBook(int id, [FromBody] Book book)
         {
             _service.UpdateBook(id, book);
             return Ok(book);
         }
 
+        // Endpoit to Delete a existing book
+        [HttpDelete("DeleteBook/{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            _service.DeleteBook(id);
+            return Ok();
+        }
+
+        // Endpoint to get a single book by id
+        [HttpGet("SingleBook/{id}")]
+        public IActionResult GetBookById(int id)
+        {
+            return Ok(_service.GetBookById(id));
+        }
     }
 }
