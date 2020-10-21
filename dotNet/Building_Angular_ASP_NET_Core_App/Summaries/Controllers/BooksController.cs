@@ -22,5 +22,12 @@ namespace Summaries.Controllers
             _service.AddBook(book);
             return Ok("Added");
         }
+
+        //API endpoint to read all books.
+        [HttpGet("[action]")]
+        public IActionResult GetBooks()
+        {
+            return Ok(_service.GetAllBooks());
+        }
     }
 }
