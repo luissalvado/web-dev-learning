@@ -32,7 +32,11 @@
             : "Not Started"
         }}
       </td>
-      <td>Actions</td>
+      <td>
+        <button type="button" class="btn btn-default btn-sm" (click)="showBook(book.id)">
+          Show
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
